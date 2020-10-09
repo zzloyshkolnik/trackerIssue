@@ -1,0 +1,30 @@
+@import 'reset.scss';
+
+$textColor: #454545;
+$lightTextColor: rgb(172, 172, 172);
+
+body {
+    .wrapper {
+        padding: 10px;
+        .wrapper-header {
+            font-size: 1.5rem;
+            color: $textColor;
+
+            span {
+                font-size: 1rem;
+                color: $lightTextColor;
+            }
+        }
+
+        @import 'form.scss';
+
+        .task-container {
+            max-width: 450px;
+            margin: 50px auto 0;
+
+            @import 'task.scss';
+        }
+    }
+}
+
+/*# sourceMappingURL=style.scss.map */

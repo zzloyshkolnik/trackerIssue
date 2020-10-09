@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "Roboto-Mono";
+  src: url(../fonts/RobotoMono-VariableFont_wght.ttf);
+  font-weight: 400;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: "Roboto-Mono", Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body .wrapper {
+  padding: 10px;
+}
+body .wrapper .wrapper-header {
+  font-size: 1.5rem;
+  color: #454545;
+}
+body .wrapper .wrapper-header span {
+  font-size: 1rem;
+  color: #acacac;
+}
+body .wrapper .issue-form-container {
+  max-width: 450px;
+  padding: 20px;
+  margin: 50px auto 0;
+  border: 1px solid #eee;
+}
+body .wrapper .issue-form-container .issue-form-container-header {
+  color: #454545;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+body .wrapper .issue-form-container form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #454545;
+}
+body .wrapper .issue-form-container form textarea, body .wrapper .issue-form-container form select, body .wrapper .issue-form-container form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+  padding: 5px;
+}
+body .wrapper .issue-form-container form textarea:focus, body .wrapper .issue-form-container form select:focus, body .wrapper .issue-form-container form input:focus {
+  outline: 1px solid #454545;
+}
+body .wrapper .issue-form-container form textarea {
+  resize: none;
+  height: 100px;
+}
+body .wrapper .issue-form-container form #issue-assign {
+  margin-bottom: 25px;
+}
+body .wrapper .issue-form-container form input[type=submit] {
+  transition: 0.2s;
+}
+body .wrapper .issue-form-container form input[type=submit]:hover {
+  background-color: #cccccc;
+}
+body .wrapper .task-container {
+  max-width: 450px;
+  margin: 50px auto 0;
+}
+body .wrapper .task-container .done {
+  opacity: 0.5;
+}
+body .wrapper .task-container .task {
+  padding: 20px;
+  margin: 0 auto 20px;
+  border: 1px solid #eee;
+}
+body .wrapper .task-container .task .task-header {
+  color: #454545;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  word-wrap: break-all;
+  word-break: break-all;
+}
+body .wrapper .task-container .task .task-status {
+  display: inline-block;
+  color: #fff;
+  font-size: 0.8rem;
+  margin: 0 5px 10px 0;
+  padding: 2px 8px;
+  border-radius: 5px;
+  background-color: #4578e6;
+}
+body .wrapper .task-container .task .done {
+  display: inline-block;
+  color: #fff;
+  font-size: 0.8rem;
+  margin: 0 5px 10px 0;
+  padding: 2px 8px;
+  border-radius: 5px;
+  background-color: #414141;
+}
+body .wrapper .task-container .task .task-priority {
+  display: inline-block;
+  color: #fff;
+  font-size: 0.8rem;
+  margin: 0 5px 10px 0;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+body .wrapper .task-container .task .low {
+  background-color: #0ca120;
+}
+body .wrapper .task-container .task .medium {
+  background-color: #e2df29;
+}
+body .wrapper .task-container .task .high {
+  background-color: #d82f2f;
+}
+body .wrapper .task-container .task .task-assign {
+  display: inline-block;
+  word-wrap: break-all;
+  word-break: break-all;
+}
+body .wrapper .task-container .task .task-assign:before {
+  content: url(../icons/profile.svg);
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+body .wrapper .task-container .task .task-description {
+  margin-bottom: 10px;
+  word-wrap: break-all;
+  word-break: break-all;
+}
+body .wrapper .task-container .task #done-btn {
+  display: inline-block;
+  color: #fff;
+  margin: 0 5px 10px 0;
+  padding: 4px 12px;
+  border-radius: 5px;
+  border: none;
+  transition: 0.2s;
+  background-color: #0ca120;
+}
+body .wrapper .task-container .task #done-btn:hover {
+  background-color: #058101;
+}
+body .wrapper .task-container .task #close-btn {
+  display: inline-block;
+  color: #fff;
+  margin: 0 5px 10px 0;
+  padding: 4px 12px;
+  border-radius: 5px;
+  border: none;
+  transition: 0.2s;
+  background-color: #d82f2f;
+}
+body .wrapper .task-container .task #close-btn:hover {
+  background-color: #c00202;
+}
+
+/*# sourceMappingURL=style.scss.map */
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,106 @@
+$redColor:  rgb(216, 47, 47);
+$orangeColor: rgb(226, 223, 41);
+$greenColor: rgb(12, 161, 32);
+
+@mixin statuses {
+    display: inline-block;
+    color: #fff;
+    font-size: .8rem;
+    margin: 0 5px 10px 0;
+    padding: 2px 8px;
+    border-radius: 5px;
+} 
+
+@mixin btn {
+    display: inline-block;
+    color: #fff;
+    margin: 0 5px 10px 0;
+    padding: 4px 12px;
+    border-radius: 5px;
+    border: none;
+    transition: .2s;
+} 
+
+.done {
+    opacity: .5;
+}
+
+.task {
+    padding: 20px;
+    margin: 0 auto 20px;
+    border: 1px solid #eee;
+
+    .task-header {
+        color: $textColor;
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        word-wrap: break-all;
+        word-break: break-all;
+    }
+
+    .task-status {
+        @include statuses;
+        background-color: rgb(69, 120, 230);
+    }
+
+        .done {
+            @include statuses;
+            background-color: rgb(65, 65, 65);
+        }
+
+    .task-priority {
+        @include statuses;
+    }
+
+        .low {
+            background-color: $greenColor;
+        }
+
+        .medium {
+            background-color: $orangeColor;
+        }
+
+        .high {
+            background-color:$redColor;
+        }
+
+    .task-assign {
+        display: inline-block;
+        word-wrap: break-all;
+        word-break: break-all;
+
+        &:before {
+            content: url(../icons/profile.svg);
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin-right: 3px;
+            vertical-align: middle;
+        }
+    }
+
+    .task-description {
+        margin-bottom: 10px;
+        word-wrap: break-all;
+        word-break: break-all;
+    }
+
+    #done-btn {
+        @include btn;
+        background-color: $greenColor;
+
+        &:hover {
+            background-color: rgb(5, 129, 1);
+        }
+    }
+
+    #close-btn {
+        @include btn;
+        background-color: $redColor;
+
+        &:hover {
+            background-color: rgb(192, 2, 2);
+        }
+    }
+
+}
