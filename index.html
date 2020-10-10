@@ -9,28 +9,28 @@
 <body>
     
     <div class="wrapper">
-        <h1 class="wrapper-header">TrackerIssue <span>by Kir.</span></h1>
-        <section class="issue-form-container">
-            <h2 class="issue-form-container-header">Add New Task</h2>
-            <form name="issueForm" action="#">
+        <h1 class="wrapper__title">TrackerIssue <span>by Kir.</span></h1>
+        <section class="form-container">
+            <h2 class="form-container__title">Add New Task</h2>
+            <form class="form" name="form" action="#">
 
-                <label for="issue-name">Name of the issue:</label>
-                <input id="issue-name" type="text" placeholder="Name the issue...">
+                <label class="form__label" for="issue-name">Name of the issue:</label>
+                <input class="form__input" id="issue-name" type="text" placeholder="Name the issue...">
 
-                <label for="issue-describe">Description:</label>
-                <textarea id="issue-describe" maxlength="140" placeholder="Describe the issue..."></textarea>
+                <label class="form__label" for="issue-describe">Description:</label>
+                <textarea class="form__textarea" id="issue-describe" maxlength="140" placeholder="Describe the issue..."></textarea>
                 
-                <label for="issue-priority">Priority:</label>
-                <select id="issue-priority">
+                <label class="form__label" for="issue-priority">Priority:</label>
+                <select class="form__select" id="issue-priority">
                     <option>Low</option>
                     <option>Medium</option>
                     <option>High</option>
                 </select>
                 
-                <label for="issue-assign">Assigned To:</label>
-                <input id="issue-assign" type="text" placeholder="Enter responsible...">
+                <label class="form__label" for="issue-assign">Assigned To:</label>
+                <input class="form__input" id="issue-assign" type="text" placeholder="Enter responsible...">
                 
-                <input id="submit" type="submit" value="Create">
+                <input class="form__submit" id="submit" type="submit" value="Create">
 
             </form>
         </section>

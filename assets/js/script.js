@@ -13,13 +13,13 @@ function bind() {
 function getDataFromForm() {
 
     const dataForm = {
-        nameIssue: document.forms.issueForm[0].value,
-        descIssue: document.forms.issueForm[1].value,
-        priorityIssue: document.forms.issueForm[2].value.toLowerCase(),
-        assignIssue: document.forms.issueForm[3].value,
+        nameIssue: document.forms.form[0].value,
+        descIssue: document.forms.form[1].value,
+        priorityIssue: document.forms.form[2].value.toLowerCase(),
+        assignIssue: document.forms.form[3].value,
     }
 
-    document.forms.issueForm.reset()
+    document.forms.form.reset()
 
     return dataForm
 }
@@ -35,7 +35,7 @@ function createTask(data) {
             {
                 tagName: 'h3',
                 props: {
-                    class: 'task-header',
+                    class: 'task__title',
                     text: data['nameIssue'],
                 }
             },
@@ -43,7 +43,7 @@ function createTask(data) {
             {
                 tagName: 'span',
                 props: {
-                    class: 'task-status',
+                    class: 'task__status',
                     text: 'open',
                 }
             },
@@ -51,7 +51,7 @@ function createTask(data) {
             {
                 tagName: 'span',
                 props: {
-                    class: 'task-priority ' + data['priorityIssue'],
+                    class: 'task__priority ' + 'task__priority_' + data['priorityIssue'],
                     text: data['priorityIssue'],
                 }
             },
@@ -59,7 +59,7 @@ function createTask(data) {
             {
                 tagName: 'span',
                 props: {
-                    class: 'task-assign',
+                    class: 'task__assign',
                     text: data['assignIssue'],
                 }
             },
@@ -67,7 +67,7 @@ function createTask(data) {
             {
                 tagName: 'p',
                 props: {
-                    class: 'task-description',
+                    class: 'task__description',
                     text: data['descIssue'],
                 }
             },
@@ -76,7 +76,7 @@ function createTask(data) {
                 tagName: 'button',
                 props: {
                     id: 'done-btn',
-                    class: 'task-btn',
+                    class: 'task__btn task__btn-done',
                     text: 'Done',
                     func: done
                 }
@@ -85,8 +85,8 @@ function createTask(data) {
             {
                 tagName: 'button',
                 props: {
-                    id: 'close-btn',
-                    class: 'task-btn',
+                    id: 'delete-btn',
+                    class: 'task__btn task__btn-delete',
                     text: 'Delete',
                     func: deleting
                 }
@@ -125,9 +125,9 @@ function createTask(data) {
 }
 
 function done() {
-    this.parentElement.children[2].innerText = 'done'
-    this.parentElement.children[2].className = 'done'
-    this.parentElement.classList.add('done')
+    this.parentElement.children[1].innerText = 'done'
+    this.parentElement.children[1].className = 'task__status_done'
+    this.parentElement.classList.add('task_done')
     this.parentElement.children[5].remove()
 }
 

@@ -14,115 +14,109 @@
 body .wrapper {
   padding: 10px;
 }
-body .wrapper .wrapper-header {
+body .wrapper__title {
   font-size: 1.5rem;
   color: #454545;
 }
-body .wrapper .wrapper-header span {
+body .wrapper__title span {
   font-size: 1rem;
   color: #acacac;
 }
-body .wrapper .issue-form-container {
-  max-width: 450px;
-  padding: 20px;
-  margin: 50px auto 0;
-  border: 1px solid #eee;
-}
-body .wrapper .issue-form-container .issue-form-container-header {
-  color: #454545;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  text-align: center;
-}
-body .wrapper .issue-form-container form label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 0.9rem;
-  color: #454545;
-}
-body .wrapper .issue-form-container form textarea, body .wrapper .issue-form-container form select, body .wrapper .issue-form-container form input {
+body .wrapper .form-container .form__submit, body .wrapper .form-container .form__select, body .wrapper .form-container .form__textarea, body .wrapper .form-container .form__input {
   display: block;
   width: 100%;
   margin-bottom: 15px;
   border: 1px solid #eee;
   padding: 5px;
 }
-body .wrapper .issue-form-container form textarea:focus, body .wrapper .issue-form-container form select:focus, body .wrapper .issue-form-container form input:focus {
+body .wrapper .form-container .form__submit:focus, body .wrapper .form-container .form__select:focus, body .wrapper .form-container .form__textarea:focus, body .wrapper .form-container .form__input:focus {
   outline: 1px solid #454545;
 }
-body .wrapper .issue-form-container form textarea {
-  resize: none;
+body .wrapper .form-container {
+  max-width: 450px;
+  padding: 20px;
+  margin: 0 auto;
+  border: 1px solid #eee;
+}
+body .wrapper .form-container__title {
+  color: #454545;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+body .wrapper .form-container .form__label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #454545;
+}
+body .wrapper .form-container .form__textarea {
   height: 100px;
+  resize: none;
 }
-body .wrapper .issue-form-container form #issue-assign {
-  margin-bottom: 25px;
-}
-body .wrapper .issue-form-container form input[type=submit] {
+body .wrapper .form-container .form__submit {
   transition: 0.2s;
 }
-body .wrapper .issue-form-container form input[type=submit]:hover {
+body .wrapper .form-container .form__submit:hover {
   background-color: #cccccc;
 }
 body .wrapper .task-container {
   max-width: 450px;
-  margin: 50px auto 0;
+  margin: 0 auto;
 }
-body .wrapper .task-container .done {
+body .wrapper .task-container .task__priority, body .wrapper .task-container .task .task__status_done, body .wrapper .task-container .task__status {
+  display: inline-block;
+  color: #fff;
+  font-size: 0.8rem;
+  margin: 0 5px 10px 0;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+body .wrapper .task-container .task__btn {
+  display: inline-block;
+  color: #fff;
+  margin: 0 5px 10px 0;
+  padding: 4px 12px;
+  border-radius: 5px;
+  border: none;
+  transition: 0.2s;
+}
+body .wrapper .task-container .task_done {
   opacity: 0.5;
 }
 body .wrapper .task-container .task {
   padding: 20px;
-  margin: 0 auto 20px;
+  margin: 20px auto;
   border: 1px solid #eee;
 }
-body .wrapper .task-container .task .task-header {
+body .wrapper .task-container .task__title {
   color: #454545;
   font-size: 1.5rem;
   margin-bottom: 5px;
   word-wrap: break-all;
   word-break: break-all;
 }
-body .wrapper .task-container .task .task-status {
-  display: inline-block;
-  color: #fff;
-  font-size: 0.8rem;
-  margin: 0 5px 10px 0;
-  padding: 2px 8px;
-  border-radius: 5px;
+body .wrapper .task-container .task__status {
   background-color: #4578e6;
 }
-body .wrapper .task-container .task .done {
-  display: inline-block;
-  color: #fff;
-  font-size: 0.8rem;
-  margin: 0 5px 10px 0;
-  padding: 2px 8px;
-  border-radius: 5px;
+body .wrapper .task-container .task .task__status_done {
   background-color: #414141;
 }
-body .wrapper .task-container .task .task-priority {
-  display: inline-block;
-  color: #fff;
-  font-size: 0.8rem;
-  margin: 0 5px 10px 0;
-  padding: 2px 8px;
-  border-radius: 5px;
-}
-body .wrapper .task-container .task .low {
+body .wrapper .task-container .task .task__priority_low {
   background-color: #0ca120;
 }
-body .wrapper .task-container .task .medium {
+body .wrapper .task-container .task .task__priority_medium {
   background-color: #e2df29;
 }
-body .wrapper .task-container .task .high {
+body .wrapper .task-container .task .task__priority_high {
   background-color: #d82f2f;
 }
-body .wrapper .task-container .task .task-assign {
+body .wrapper .task-container .task__assign {
   display: inline-block;
   word-wrap: break-all;
   word-break: break-all;
 }
-body .wrapper .task-container .task .task-assign:before {
+body .wrapper .task-container .task__assign:before {
   content: url(../icons/profile.svg);
   display: inline-block;
   width: 1rem;
@@ -130,35 +124,21 @@ body .wrapper .task-container .task .task-assign:before {
   margin-right: 3px;
   vertical-align: middle;
 }
-body .wrapper .task-container .task .task-description {
+body .wrapper .task-container .task__description {
   margin-bottom: 10px;
   word-wrap: break-all;
   word-break: break-all;
 }
-body .wrapper .task-container .task #done-btn {
-  display: inline-block;
-  color: #fff;
-  margin: 0 5px 10px 0;
-  padding: 4px 12px;
-  border-radius: 5px;
-  border: none;
-  transition: 0.2s;
+body .wrapper .task-container .task__btn-done {
   background-color: #0ca120;
 }
-body .wrapper .task-container .task #done-btn:hover {
+body .wrapper .task-container .task__btn-done:hover {
   background-color: #058101;
 }
-body .wrapper .task-container .task #close-btn {
-  display: inline-block;
-  color: #fff;
-  margin: 0 5px 10px 0;
-  padding: 4px 12px;
-  border-radius: 5px;
-  border: none;
-  transition: 0.2s;
+body .wrapper .task-container .task__btn-delete {
   background-color: #d82f2f;
 }
-body .wrapper .task-container .task #close-btn:hover {
+body .wrapper .task-container .task__btn-delete:hover {
   background-color: #c00202;
 }
 

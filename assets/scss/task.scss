@@ -2,7 +2,7 @@ $redColor:  rgb(216, 47, 47);
 $orangeColor: rgb(226, 223, 41);
 $greenColor: rgb(12, 161, 32);
 
-@mixin statuses {
+%statuses {
     display: inline-block;
     color: #fff;
     font-size: .8rem;
@@ -11,7 +11,7 @@ $greenColor: rgb(12, 161, 32);
     border-radius: 5px;
 } 
 
-@mixin btn {
+%btn {
     display: inline-block;
     color: #fff;
     margin: 0 5px 10px 0;
@@ -21,16 +21,16 @@ $greenColor: rgb(12, 161, 32);
     transition: .2s;
 } 
 
-.done {
+.task_done {
     opacity: .5;
 }
 
 .task {
     padding: 20px;
-    margin: 0 auto 20px;
+    margin: 20px auto;
     border: 1px solid #eee;
 
-    .task-header {
+    &__title {
         color: $textColor;
         font-size: 1.5rem;
         margin-bottom: 5px;
@@ -38,33 +38,33 @@ $greenColor: rgb(12, 161, 32);
         word-break: break-all;
     }
 
-    .task-status {
-        @include statuses;
+    &__status {
+        @extend %statuses;
         background-color: rgb(69, 120, 230);
     }
 
-        .done {
-            @include statuses;
+        .task__status_done{
+            @extend %statuses;
             background-color: rgb(65, 65, 65);
         }
 
-    .task-priority {
-        @include statuses;
+    &__priority {
+        @extend %statuses;
     }
 
-        .low {
+        .task__priority_low {
             background-color: $greenColor;
         }
 
-        .medium {
+        .task__priority_medium {
             background-color: $orangeColor;
         }
 
-        .high {
+        .task__priority_high {
             background-color:$redColor;
         }
 
-    .task-assign {
+    &__assign {
         display: inline-block;
         word-wrap: break-all;
         word-break: break-all;
@@ -79,14 +79,17 @@ $greenColor: rgb(12, 161, 32);
         }
     }
 
-    .task-description {
+    &__description {
         margin-bottom: 10px;
         word-wrap: break-all;
         word-break: break-all;
     }
 
-    #done-btn {
-        @include btn;
+    &__btn {
+        @extend %btn;
+    }
+
+    &__btn-done  {
         background-color: $greenColor;
 
         &:hover {
@@ -94,8 +97,7 @@ $greenColor: rgb(12, 161, 32);
         }
     }
 
-    #close-btn {
-        @include btn;
+    &__btn-delete {
         background-color: $redColor;
 
         &:hover {

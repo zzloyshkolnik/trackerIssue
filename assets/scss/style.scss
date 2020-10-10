@@ -6,7 +6,7 @@ $lightTextColor: rgb(172, 172, 172);
 body {
     .wrapper {
         padding: 10px;
-        .wrapper-header {
+        &__title {
             font-size: 1.5rem;
             color: $textColor;
 
@@ -20,7 +20,7 @@ body {
 
         .task-container {
             max-width: 450px;
-            margin: 50px auto 0;
+            margin: 0 auto;
 
             @import 'task.scss';
         }
