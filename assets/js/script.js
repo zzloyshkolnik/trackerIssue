@@ -108,13 +108,16 @@ function createTask(data) {
         let nChild = document.createElement(tagName)
 
         Object.entries(props).forEach(([value, key]) => {
-            if (value == 'text') {
-                nChild.innerText = key
-            } else if (value == 'func') {
-                nChild.addEventListener('click', key)
-            }
-            else {
-                nChild.setAttribute(value, key)
+            switch(value) {
+                case 'text':
+                    nChild.innerText = key
+                    break
+                case 'func':
+                    nChild.addEventListener('click', key)
+                    break
+                default:
+                    nChild.setAttribute(value, key)
+                    break
             }
         });
 
