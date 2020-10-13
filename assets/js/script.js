@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
 function getDataFromForm() {
 
     const dataForm = {
-        nameIssue: document.forms.form[0].value,
-        descIssue: document.forms.form[1].value,
-        priorityIssue: document.forms.form[2].value.toLowerCase(),
-        assignIssue: document.forms.form[3].value,
+        nameIssue: document.forms.form['name'].value,
+        descIssue: document.forms.form['description'].value,
+        priorityIssue: document.forms.form['priority'].value.toLowerCase(),
+        assignIssue: document.forms.form['assign'].value,
     }
 
     document.forms.form.reset()

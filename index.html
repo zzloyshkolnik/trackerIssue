@@ -15,20 +15,20 @@
             <form class="form" name="form" action="#">
 
                 <label class="form__label" for="issue-name">Name of the issue:</label>
-                <input class="form__input" id="issue-name" type="text" placeholder="Name the issue...">
+                <input name="name" class="form__input" id="issue-name" type="text" placeholder="Name the issue...">
 
                 <label class="form__label" for="issue-describe">Description:</label>
-                <textarea class="form__textarea" id="issue-describe" maxlength="140" placeholder="Describe the issue..."></textarea>
+                <textarea name="description" class="form__textarea" id="issue-describe" maxlength="140" placeholder="Describe the issue..."></textarea>
                 
                 <label class="form__label" for="issue-priority">Priority:</label>
-                <select class="form__select" id="issue-priority">
+                <select name="priority" class="form__select" id="issue-priority">
                     <option>Low</option>
                     <option>Medium</option>
                     <option>High</option>
                 </select>
                 
                 <label class="form__label" for="issue-assign">Assigned To:</label>
-                <input class="form__input" id="issue-assign" type="text" placeholder="Enter responsible...">
+                <input name="assign" class="form__input" id="issue-assign" type="text" placeholder="Enter responsible...">
                 
                 <input class="form__submit" id="submit" type="submit" value="Create">
 
