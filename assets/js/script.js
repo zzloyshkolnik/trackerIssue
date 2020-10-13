@@ -1,6 +1,6 @@
 'use strict'
 
-function bind() {
+document.addEventListener('DOMContentLoaded', function() {
     let createBtn = document.getElementById('submit')
 
     createBtn.addEventListener('click', function(event) {
@@ -8,7 +8,8 @@ function bind() {
 
         createTask(getDataFromForm())
     })
-}
+})
+
 
 function getDataFromForm() {
 
@@ -45,6 +46,7 @@ function createTask(data) {
                 props: {
                     class: 'task__status',
                     text: 'open',
+                    name: 'status'
                 }
             },
 
@@ -78,6 +80,7 @@ function createTask(data) {
                     id: 'done-btn',
                     class: 'task__btn task__btn-done',
                     text: 'Done',
+                    name: 'btn-done',
                     func: done
                 }
             },
@@ -100,11 +103,11 @@ function createTask(data) {
 
     Object.entries(props).forEach(([key, value]) => {
         node.setAttribute(key, value)
-    });
+    })
 
     childrens.forEach(child => {
 
-        let {tagName, props} = child;
+        let {tagName, props} = child
         let nChild = document.createElement(tagName)
 
         Object.entries(props).forEach(([value, key]) => {
@@ -119,7 +122,7 @@ function createTask(data) {
                     nChild.setAttribute(value, key)
                     break
             }
-        });
+        })
 
         node.appendChild(nChild)
     })
@@ -128,14 +131,13 @@ function createTask(data) {
 }
 
 function done() {
-    this.parentElement.children[1].innerText = 'done'
-    this.parentElement.children[1].className = 'task__status_done'
-    this.parentElement.classList.add('task_done')
-    this.parentElement.children[5].remove()
+    this.parentNode.children['status'].innerText = 'done'
+    this.parentNode.children['status'].className = 'task__status_done'
+    this.parentNode.classList.add('task_done')
+    
+    document.querySelector('.task').removeChild(this)
 }
 
 function deleting() {
-    this.parentElement.remove()
+    document.querySelector('.task-container').removeChild(this.parentNode)
 }
-
-bind()

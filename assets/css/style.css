@@ -35,7 +35,7 @@ body .wrapper .form-container .form__submit:focus, body .wrapper .form-container
 body .wrapper .form-container {
   max-width: 450px;
   padding: 20px;
-  margin: 0 auto;
+  margin: 20px auto;
   border: 1px solid #eee;
 }
 body .wrapper .form-container__title {
